@@ -1,0 +1,39 @@
+ .dashboadContainer {
+      background-color: #f6f6f9;      
+      border-radius: 5px;
+    }
+.avatarFont{
+    font-size:10px ! important;
+}  
+.currencyFont,.statusFont{
+    font-size:10px ! important;
+}
+.currency, .currency-small,.switch-icon,.bookings,.views{
+    background-image: url('uploads/currency-icon.png');
+    background-position: left top;
+    background-position-x: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:25px;
+    height:25px;
+    float:left;
+}  
+.currency-small{
+    width:20px ! important;
+    height:20 px ! important;
+}
+.switch-icon{
+    background-image: url('uploads/icon1.jpg');
+}
+.bookings{
+    background-image: url('uploads/icon2.png');
+}
+.views{
+    background-image: url('uploads/icon3.png');
+}
+.dashboardText{
+    font-size:20px ! important;
+}
+.dashboardText a{
+    text-decoration:none;
+}
