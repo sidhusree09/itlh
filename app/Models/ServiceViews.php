@@ -22,7 +22,15 @@ class ServiceViews extends Model
     
     public function incrementViews($service_id)
     {    
-        $serviceViews = self::where('service_id', $service_id)->first();
+        $day = Carbon::now()->day;
+        $month = Carbon::now()->month;
+        $year = Carbon::now()->year;
+        
+        $serviceViews = self::where('service_id', $service_id)
+                        ->where('day',$day)
+                        ->where('month',$month)
+                        ->where('year',$year)
+                        ->first();
         
         if ($serviceViews) {
             $serviceViews->increment('view');
@@ -34,9 +42,9 @@ class ServiceViews extends Model
          $recordData = [
             'service_id' => $service_id,
             'view' => $serviceViews->view, //$this->increment('view'),
-            'day' =>  Carbon::now()->day,
-            'month' =>  Carbon::now()->month,
-            'year' =>  Carbon::now()->year,
+            'day' =>  $day,
+            'month' =>  $month,
+            'year' =>  $year,
         ];
         
          $criteria = [
