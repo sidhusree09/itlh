@@ -36,6 +36,7 @@ class HomeController extends Controller
         //Bookings total monthly basis
         $bookings = new Bookings;
         $bookingsCount = $bookings->getDashboardBookings();
+        $bookingsCount = $bookingsCount == 0 ? 1 : $bookingsCount;
         $totalBookingValue = $bookings->getTotalBookings();
         $averageBookingsValue = round($totalBookingValue/$bookingsCount,0,2); 
         // cards
